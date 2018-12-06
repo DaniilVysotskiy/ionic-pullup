@@ -157,6 +157,8 @@ export class IonPullUpComponent  {
   
   expand() {
     this._footerMeta.lastPosY = 0;
+    this._footerMeta.height = this.maxHeight > 0 ? this.maxHeight : this.expandedHeight; 
+    this.renderer.setElementStyle(this.childFooter.nativeElement, 'height', this._footerMeta.height + 'px');
     this.renderer.setElementStyle(this.childFooter.nativeElement, '-webkit-transform', 'translate3d(0, 0, 0)');
     this.renderer.setElementStyle(this.childFooter.nativeElement, 'transform', 'translate3d(0, 0, 0)');
     this.renderer.setElementStyle(this.childFooter.nativeElement, 'transition', '300ms ease-in-out');
